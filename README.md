@@ -1,3 +1,3 @@
-# My Game is Cool!
+# Wassup
 
-Make sure you give it a good description here...
+This is where I keep track of the java stuff
