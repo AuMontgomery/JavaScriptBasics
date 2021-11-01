@@ -6,6 +6,9 @@
 this is a block comment
 it is epic and can span multiple lines
 
-*/ 
+*/
 
-console.log("Hello world!");
+let firstName = "Epic";
+let age = 99;
+
+console.log("Hello world! My name is %s and I am %d years old", firstName, age);
