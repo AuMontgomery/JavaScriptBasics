@@ -15,3 +15,18 @@ age = "16"; // age is now a string
 age = false; // age is now a boolean
 
 const MAX_AGE = 200;
+
+var visibleEverywhere = true;
+
+var foo = 16;
+let bar = 10;
+
+console.log(foo, bar);
+
+{
+	let bar = 60;
+	var foo = 61;
+	console.log(foo, bar);
+}
+
+console.log(foo, bar);
