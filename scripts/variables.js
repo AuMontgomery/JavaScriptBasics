@@ -30,3 +30,18 @@ console.log(foo, bar);
 }
 
 console.log(foo, bar);
+
+let names = ["Austin", "Andrew", "Priya"];
+
+console.log(names[1]);
+// Andrew will output to the console
+
+let ages = [16, 15, 15];
+console.log("%s is %d years old", names[1], ages[1]);
+
+let game = {
+	score: 0,
+	isOver: false,
+};
+
+console.log(game);
