@@ -12,5 +12,5 @@ body {
 #game-canvas {
 	width: 800px;
 	height: 600px;
-	border: solid 1px black;
+	border: solid 1px lightgrey;
 }

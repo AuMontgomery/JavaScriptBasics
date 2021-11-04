@@ -42,6 +42,17 @@ console.log("%s is %d years old", names[1], ages[1]);
 let game = {
 	score: 0,
 	isOver: false,
+	displayScore: function () {
+		return "Current Score is " + this.score;
+	},
 };
 
 console.log(game);
+console.log(game.displayScore());
+
+let add = function (num1, num2) {
+	return num1 + num2;
+};
+
+let sum = add(3, 10);
+console.log(sum);
