@@ -5,13 +5,13 @@
 }
 
 body {
-	background-color: black;
-	color: lightgray;
+	background-color: lightgray;
+	color: green;
 	font: arial;
 }
 
 #game-canvas {
 	width: 800px;
 	height: 600px;
-	border: solid 1px lightgrey;
+	border: solid 4px darkblue;
 }
