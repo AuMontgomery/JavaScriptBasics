@@ -21,5 +21,5 @@ canvas.addEventListener("mousemove", (e) => {
 	ctx.beginPath();
 	ctx.arc(e.offsetX, e.offsetY, 60, 0, Math.PI * 2, false);
 	ctx.fill();
-	color = color + 2;
+	color = color + 0.1;
 });
