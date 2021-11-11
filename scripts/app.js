@@ -4,50 +4,59 @@ const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 600;
 
-/*
-let x = 300;
-let y = 200;
+class Brush {
+	constructor(color) {
+		this.color = color;
+		this.x = 0;
+		this.y = 0;
+		this.isDrawing = false;
+		this.lightness = 50;
+	}
 
-ctx.fillRect(x, y, 200, 200);
-*/
+	startDrawing() {
+		this.isDrawing = true;
+	}
 
-let x2 = 400;
-let y2 = 100;
+	stopDrawing() {
+		this.isDrawing = false;
+	}
 
-let color = 0;
+	changeMode(mode) {
+		switch (e.key) {
+			case "e":
+				this.lightness = 100;
+				break;
 
-let lightness = 50;
-let isDrawing = false;
+			case "g":
+				this.color = 120;
+			default:
+				this.lightness = 50;
+		}
+	}
+	draw(x, y) {
+		if (!isDrawing) return;
+
+		ctx.fillStyle = `hsla(${this.color}, 90%, ${this.lightness}%, 1`;
+		ctx.beginPath();
+		ctx.arc(x, y, 40, 0, Math.PI * 2, false);
+		ctx.fill();
+	}
+}
+
+let activeBrush = new Brush(0);
 
 window.addEventListener("keydown", (e) => {
-	console.log(e.key);
-
-	switch (e.key) {
-		case "e":
-			lightness = 100;
-			break;
-
-		case "g":
-			color = 120;
-		default:
-			lightness = 50;
-	}
+	activeBrush.changeMode(e.key);
 });
 
 canvas.addEventListener("mousedown", () => {
-	isDrawing = true;
+	activeBrush.startDrawing();
 });
 
 canvas.addEventListener("mouseup", () => {
-	isDrawing = false;
+	activeBrush.stopDrawing();
 });
 
 canvas.addEventListener("mousemove", (e) => {
-	if (!isDrawing) return;
-
-	ctx.fillStyle = `hsla(${color}, 90%, ${lightness}%, 1`;
-	ctx.beginPath();
-	ctx.arc(e.offsetX, e.offsetY, 10, 0, Math.PI * 2, false);
-	ctx.fill();
-	//color = color + 0.5;
+	activeBrush.draw(e.offsetX, e.offsetY);
 });
